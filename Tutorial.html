@@ -13,12 +13,7 @@
   <body>
     <h1>My Portfolio</h1>
     <h2>About Me</h2>
-    <img
-      src="static/Self Portrait.png"
-      alt="Self Portrait"
-      width="30%"
-      height="30%"
-    />
+    <img src="Self Portrait.png" alt="Self Portrait" width="30%" height="30%" />
     <p>Hello! I am Siddarth, a student taking H2 Computing at ASRJC</p>
     <h2>Skills</h2>
     <ul class="skills">
@@ -71,7 +66,7 @@
     <script>
       document.querySelectorAll(".skills li").forEach((item) => {
         item.addEventListener("mouseover", () => {
-          const hoverSound = new Audio("static/Hover.mp3");
+          const hoverSound = new Audio("Hover.mp3");
           hoverSound.volume = 1.0;
           hoverSound.play();
         });
