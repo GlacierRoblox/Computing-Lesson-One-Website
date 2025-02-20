@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Computer Science Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>My Portfolio</h1>
+    <h2>About Me</h2>
+    <img
+      src="static/Self Portrait.png"
+      alt="Self Portrait"
+      width="30%"
+      height="30%"
+    />
+    <p>Hello! I am Siddarth, a student taking H2 Computing at ASRJC</p>
+    <h2>Skills</h2>
+    <ul class="skills">
+      <li><strong>C#</strong></li>
+      <li><strong>Python</strong></li>
+      <li><strong>HTML</strong></li>
+      <li><strong>CSS</strong></li>
+      <li><strong>JavaScript</strong></li>
+      <li><strong>C++</strong></li>
+    </ul>
+    <h2>Contact Me</h2>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" /><br />
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" /><br />
+      <label for="message">Message:</label>
+      <textarea id="message" name="message"></textarea><br />
+      <input type="submit" value="Submit" />
+    </form>
+    <h2>Hiring Application</h2>
+    <form>
+      <label for="applicant-name">Your Name:</label>
+      <input type="text" id="applicant-name" name="applicant-name" /><br />
+      <label for="company-name">Company Name:</label>
+      <input type="text" id="company-name" name="company-name" /><br />
+      <label for="resume">Resume:</label>
+      <input
+        type="file"
+        id="resume"
+        name="resume"
+        accept=".pdf,.doc,.docx"
+      /><br />
+      <label for="cover-letter">Cover Letter:</label>
+      <input
+        type="file"
+        id="cover-letter"
+        name="cover-letter"
+        accept=".pdf,.doc,.docx"
+      /><br />
+      <label for="portfolio">Portfolio:</label>
+      <input
+        type="file"
+        id="portfolio"
+        name="portfolio"
+        accept=".pdf,.doc,.docx"
+      /><br />
+      <input type="submit" value="Submit Application" />
+    </form>
+    <script>
+      document.querySelectorAll(".skills li").forEach((item) => {
+        item.addEventListener("mouseover", () => {
+          const hoverSound = new Audio("static/Hover.mp3");
+          hoverSound.volume = 1.0;
+          hoverSound.play();
+        });
+      });
+      document
+        .getElementById("resume")
+        .addEventListener("change", function (event) {
+          const file = event.target.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+              const preview = document.getElementById("preview");
+              preview.src = e.target.result;
+              preview.style.display = "block";
+            };
+            reader.readAsDataURL(file);
+          }
+        });
+    </script>
+  </body>
+</html>
